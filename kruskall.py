@@ -1,4 +1,4 @@
-adelaide_data = open('adelaide.CSV', 'r').readlines()[1:20]
+adelaide_data = open('adelaide.CSV', 'r').readlines()[1:80]
 adelaide_data
 
 # Formatação do dataset
@@ -67,6 +67,7 @@ class KruskalMST:  # Minimum Spanning Tree (Kruskal)
             aresta = e.pop(0)  # aresta de menor peso
             if aresta not in Tree:
                 peso, v1, v2 = aresta
+                print(peso,'peso da aresta', aresta)
 
                 if self.find(v1) != self.find(v2):
                     self.union(v1, v2)
