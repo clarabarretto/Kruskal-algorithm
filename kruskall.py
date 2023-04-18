@@ -78,3 +78,7 @@ class KruskalMST:  # Minimum Spanning Tree (Kruskal)
 # Saída da árvore geradora mínima de Kruskal
 mst = KruskalMST(v, e).kruskal()
 print(mst)  ## tá em lista, tem que ser {} set, set() não funciona
+
+
+
+12345 
