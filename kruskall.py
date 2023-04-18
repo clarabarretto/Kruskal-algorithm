@@ -1,4 +1,4 @@
-adelaide_data = open('adelaide.CSV', 'r').readlines()[1:80]
+adelaide_data = open('adelaide.CSV', 'r').readlines()[1:100]
 adelaide_data
 
 # Formatação do dataset
@@ -79,6 +79,24 @@ class KruskalMST:  # Minimum Spanning Tree (Kruskal)
 mst = KruskalMST(v, e).kruskal()
 print(mst)  ## tá em lista, tem que ser {} set, set() não funciona
 
+## função para a vizualização do grafo
 
+import networkx as nx
+import matplotlib.pyplot as plt
 
-12345 
+# Criando o grafo
+G = nx.Graph()
+for aresta in mst:
+    peso, v1, v2 = aresta
+    G.add_edge(v1, v2, weight=peso)
+
+# Desenhando o grafo
+pos = nx.spring_layout(G)  # posição dos vértices
+labels = nx.get_edge_attributes(G, 'weight')  # rótulos das arestas
+nx.draw_networkx_nodes(G, pos, node_color='lightblue', node_size=600)
+nx.draw_networkx_edges(G, pos, edge_color='black')
+nx.draw_networkx_labels(G, pos, font_size = 7)
+nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
+plt.axis('off')
+
+plt.show()  # exibir o gráfico
