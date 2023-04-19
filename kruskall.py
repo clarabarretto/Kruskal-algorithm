@@ -1,4 +1,4 @@
-adelaide_data = open('adelaide.CSV', 'r').readlines()[1:100]
+adelaide_data = open('adelaide.CSV', 'r').readlines()[1:201] # a primeira linha é o título e não faz parte dos dados
 adelaide_data
 
 # Formatação do dataset
@@ -23,8 +23,11 @@ for data in adelaide_data:
   if stop_id not in v:
     v.append(stop_id)
 
-  peso =  n_boarding
-  aresta = tuple(p.strip('"') for p in (peso.strip(), info[0], info[2]))
+  p =  n_boarding
+  remove = ' "'
+  peso = int(p.translate(str.maketrans('', '', remove)))  # transforma em valor inteiro
+  v1, v2 = info[0].translate(str.maketrans('', '', remove)), info[2].translate(str.maketrans('', '', remove))
+  aresta = (peso, v1, v2)
 
   e.append(aresta)
 
@@ -75,8 +78,8 @@ class KruskalMST:  # Minimum Spanning Tree (Kruskal)
 mst = KruskalMST(v, e).kruskal()
 print(mst)
 
-## função para a vizualização do grafo
-
+# Pontuação extra
+# Função para a vizualização do grafo
 import networkx as nx
 import matplotlib.pyplot as plt
 
