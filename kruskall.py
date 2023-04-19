@@ -29,7 +29,7 @@ for data in adelaide_data:
   e.append(aresta)
 
 v = [elem.replace('"', '') for elem in v]
-print(type(v), type(e))
+
 # Classes e métodos
 class KruskalMST:  # Minimum Spanning Tree (Kruskal)
 
