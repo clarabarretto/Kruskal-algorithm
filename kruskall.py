@@ -29,10 +29,7 @@ for data in adelaide_data:
   e.append(aresta)
 
 v = [elem.replace('"', '') for elem in v]
-
-print(v)
-print(e)
-
+print(type(v), type(e))
 # Classes e métodos
 class KruskalMST:  # Minimum Spanning Tree (Kruskal)
 
@@ -67,7 +64,6 @@ class KruskalMST:  # Minimum Spanning Tree (Kruskal)
             aresta = e.pop(0)  # aresta de menor peso
             if aresta not in Tree:
                 peso, v1, v2 = aresta
-                print(peso,'peso da aresta', aresta)
 
                 if self.find(v1) != self.find(v2):
                     self.union(v1, v2)
@@ -77,7 +73,7 @@ class KruskalMST:  # Minimum Spanning Tree (Kruskal)
 
 # Saída da árvore geradora mínima de Kruskal
 mst = KruskalMST(v, e).kruskal()
-print(mst)  ## tá em lista, tem que ser {} set, set() não funciona
+print(mst)
 
 ## função para a vizualização do grafo
 
@@ -93,7 +89,7 @@ for aresta in mst:
 # Desenhando o grafo
 pos = nx.spring_layout(G)  # posição dos vértices
 labels = nx.get_edge_attributes(G, 'weight')  # rótulos das arestas
-nx.draw_networkx_nodes(G, pos, node_color='lightblue', node_size=600)
+nx.draw_networkx_nodes(G, pos, node_color='pink', node_size=600)
 nx.draw_networkx_edges(G, pos, edge_color='black')
 nx.draw_networkx_labels(G, pos, font_size = 7)
 nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
