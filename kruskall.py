@@ -89,6 +89,7 @@ for aresta in mst:
 # Desenhando o grafo
 pos = nx.spring_layout(G)  # posição dos vértices
 labels = nx.get_edge_attributes(G, 'weight')  # rótulos das arestas
+
 nx.draw_networkx_nodes(G, pos, node_color='pink', node_size=600)
 nx.draw_networkx_edges(G, pos, edge_color='black')
 nx.draw_networkx_labels(G, pos, font_size = 7)
