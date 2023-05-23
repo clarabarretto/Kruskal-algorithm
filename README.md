@@ -27,3 +27,7 @@ networkx e matplotlib (para visualização dos grafos)
 A primeira parte contém a formatação do dataset (que seria a entrada) para que o mesmo se adeque às necessidades do algoritmo de kruskal, que vem logo em seguida. Ele utiliza duas listas oriundas do dataset, uma de vértices – strings – e outra de arestas (tuplas que contém o peso da aresta – int – e a dupla de vértices conjugados). Os dados utilizados como vértices são representantes do TripID e do StopID, enquanto o peso é dado pelo NumberOfBoardings.
 A saída do programa é uma MST de kruskal do tipo lista de tuplas, com cada item da tupla sendo, respectivamente, o peso da aresta e a dupla de vértices integrantes. A segunda parte, configura a seção de ponto extra, em que é possível visualizar o grafo da mst.
 
+<img src="https://github.com/clarabarretto/Kruskal-algorithm/assets/111030247/8c8ccb34-260c-4a15-850a-4a0c4b314fec" width="437" alt="Descrição da imagem">
+<img src="https://github.com/clarabarretto/Kruskal-algorithm/assets/111030247/60637b14-247b-4eb0-8819-d41a60b138fa" width="450" alt="Descrição da imagem">
+
+###### visualizção do grafo
